@@ -320,3 +320,24 @@ tongHocPhi.addEventListener('mouseover', function() {
     tongHocPhi.innerHTML = tongHocPhiElement; 
   });
 
+  
+  function check() {
+    
+    var myInput = document.querySelector('.myInput').value
+    var isNumber = !isNaN(myInput)
+    console.log('123')
+      if (!isNumber || parseFloat(myInput) > 0) {
+        localStorage.removeItem('danhsachmon');
+        localStorage.removeItem('danhsachkyhoc');
+        location.reload();
+        alert("Vui lòng kiểm tra và nhập lại thông tin của mức học phí,hệ số và số tín chỉ!");
+      }
+      
+      
+}
+
+var btnChecks= document.querySelectorAll('.btn-check')
+
+btnChecks.forEach(function(btn) {
+    btn.addEventListener('click', check);
+  });
